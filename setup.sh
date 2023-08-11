@@ -212,9 +212,8 @@ cat <<EOF>> /etc/hokagevpn/theme/color.conf
 blue
 EOF
 
+#install ssh slhost
 wget https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/slhost.sh && chmod +x slhost.sh && ./slhost.sh
-#install xray
-wget https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
 #install ssh ovpn
 wget https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
 wget https://raw.githubusercontent.com/hokagelegend2023/alpha/main/sstp/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
@@ -241,6 +240,8 @@ wget https://raw.githubusercontent.com/hokagelegend2023/alpha/main/slowdns/insta
 # wget https://raw.githubusercontent.com/hokagelegend2023/alpha/main/grpc/xray-grpc.sh && chmod +x xray-grpc.sh && screen -S xray-grpc ./xray-grpc.sh
 # install shadowsocks plugin
 # wget https://raw.githubusercontent.com/hokagelegend2023/alpha/main/shadowsocks-plugin/install-ss-plugin.sh && chmod +x install-ss-plugin.sh && ./install-ss-plugin.sh
+#install xray
+wget https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
  
 
 rm -f /root/ssh-vpn.sh
