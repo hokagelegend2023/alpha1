@@ -33,7 +33,7 @@ rm -rf slhost
 rm -rf install-sldns
 rm -rf addssh
 wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/menu.sh" && chmod +x /usr/bin/menu
-wget -q -O /usr/bin/menu-theme "https://raw.githubusercontent.com/hokagelegend2023/beta2/main/update/menu-theme.sh" && chmod +x /usr/bin/menu-theme
+wget -q -O /usr/bin/menu-theme "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/menu-theme.sh" && chmod +x /usr/bin/menu-theme
 wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/hokagelegend2023/original/main/update/menu-backup.sh" && chmod +x /usr/bin/menu-backup
 wget -O install-sldns "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/SLDNS/install-sldns"
 wget -O restart "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/restart.sh"
