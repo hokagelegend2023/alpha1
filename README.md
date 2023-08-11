@@ -65,10 +65,6 @@ cd
 * Buat Akses Root Di VPS /Root VPS
 * Untuk Mengizinkan Root Dan Ubah Password Login di VPS Google Cloud Platform, Aws, Dan Lain-lain
    
-```html
-  wget -qO- -O vpsroot.sh https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/vpsroot.sh && bash vpsroot.sh
-  
-```
   
 ### 3.
 
@@ -77,7 +73,7 @@ cd
 * Install Semua Layanan VPN /Install All VPN Service
    
 ```html
-apt --fix-missing update && apt update && apt upgrade -y && apt install -y wget screen && wget -q https://raw.githubusercontent.com/hokagelegend2023/alpha/main/setup.sh && chmod +x setup.sh && screen -S setup ./setup.sh
+apt --fix-missing update && apt update && apt upgrade -y && apt install -y wget screen && wget -q https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/setup.sh && chmod +x setup.sh && screen -S setup ./setup.sh
 
   
 ```
