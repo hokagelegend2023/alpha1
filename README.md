@@ -77,7 +77,7 @@ cd
 * Install Semua Layanan VPN /Install All VPN Service
    
 ```html
-apt --fix-missing update && apt update && apt upgrade -y && apt install -y wget screen && wget -q https://raw.githubusercontent.com/hokagelegend2023/alpha/main/setup.sh && chmod +x setup.sh && screen -S setup ./setup.sh
+apt --fix-missing update && apt update && apt upgrade -y && apt install -y wget screen && wget -q https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/setup.sh && chmod +x setup.sh && screen -S setup ./setup.sh
 
   
 ```
@@ -105,7 +105,7 @@ sl-fix
 ```
 +++ Jika Xray tidak aktif jalan kan kembali atau instal kembali xray ++++
 -------
-wget https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
+wget https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
 
 ---------
 ```html
