@@ -20,8 +20,9 @@ echo -e "$yy 9$y.  Reboot VPS"
 echo -e "$yy 10$y. Speedtest VPS"
 echo -e "$yy 11$y. Displaying System Information"
 echo -e "$yy 12$y. Info Script Auto Install"
-echo -e "$yy 13$y. Menu"
-echo -e "$yy 14$y. Exit"
+echo -e "$yy 13$y. UPADET TERBARU"
+echo -e "$yy 14$y. Menu"
+echo -e "$yy 15$y. Exit"
 echo -e "$y-------------------------------------------------------------$wh"
 echo -e ""
 read -p "Select From Options [ 1 - 60 ] : " menu
@@ -65,9 +66,13 @@ about
 ;;
 13)
 clear
-menu
+updatemenu
 ;;
 14)
+clear
+menu
+;;
+15)
 clear
 exit
 ;;
