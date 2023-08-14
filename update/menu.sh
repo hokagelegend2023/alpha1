@@ -227,14 +227,14 @@ echo -e "$COLOR1│$NC [ WIREGUARD: ${status_wg} ]  [ L2TP : ${status_l2tp} ]   
 echo -e "$COLOR1│$NC                                                        $COLOR1│$NC"
 echo -e "$COLOR1└────────────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌───────────────────────────────────────────────────────┐${NC}"
-echo -e "${COLOR1}│  [01]${NC} • SSHWS      [${YELLOW}Menu${NC}]   ${COLOR1}[09]${NC} • PPTP     [${YELLOW}Menu${NC}]    $COLOR1│$NC"   
-echo -e "${COLOR1}│  [02]${NC} • VMESS      [${YELLOW}Menu${NC}]   ${COLOR1}[10]${NC} • BACKUP   [${YELLOW}Menu${NC}]    $COLOR1│$NC"  
+echo -e "${COLOR1}│  [01]${NC} • SSHWS      [${YELLOW}Menu${NC}]   ${COLOR1}[09]${NC} • PPTP        [${YELLOW}Menu${NC}]    $COLOR1│$NC"   
+echo -e "${COLOR1}│  [02]${NC} • VMESS      [${YELLOW}Menu${NC}]   ${COLOR1}[10]${NC} • BACKUP      [${YELLOW}Menu${NC}]    $COLOR1│$NC"  
 echo -e "${COLOR1}│  [03]${NC} • VLESS      [${YELLOW}Menu${NC}]   ${COLOR1}[11]${NC} • ADD HOST/DOMAIN    $COLOR1│$NC"  
 echo -e "${COLOR1}│  [04]${NC} • TROJAN     [${YELLOW}Menu${NC}]   ${COLOR1}[12]${NC} • RENEW CERT         $COLOR1│$NC"  
-echo -e "${COLOR1}│  [05]${NC} • SW-Shock   [${YELLOW}Menu${NC}]   ${COLOR1}[13]${NC} • SETTINGS [${YELLOW}Menu${NC}]    $COLOR1│$NC"
-echo -e "${COLOR1}│  [06]${NC} • WIREGUARD  [${YELLOW}Menu${NC}]   ${COLOR1}[14]${NC} • INFO     [${YELLOW}Menu${NC}]    $COLOR1│$NC"
-echo -e "${COLOR1}│  [07]${NC} • SSTP       [${YELLOW}Menu${NC}]   ${COLOR1}[15]${NC} • SET BOT  [${YELLOW}Menu${NC}]    $COLOR1│$NC"
-echo -e "${COLOR1}│  [08]${NC} • L2TP       [${YELLOW}Menu${NC}]   ${COLOR1}[16]${NC} • THEME     [${YELLOW}Menu${NC}]   $COLOR1│$NC"
+echo -e "${COLOR1}│  [05]${NC} • SW-Shock   [${YELLOW}Menu${NC}]   ${COLOR1}[13]${NC} • SETTINGS     [${YELLOW}Menu${NC}]    $COLOR1│$NC"
+echo -e "${COLOR1}│  [06]${NC} • WIREGUARD  [${YELLOW}Menu${NC}]   ${COLOR1}[14]${NC} • INFO         [${YELLOW}Menu${NC}]    $COLOR1│$NC"
+echo -e "${COLOR1}│  [07]${NC} • SSTP       [${YELLOW}Menu${NC}]   ${COLOR1}[15]${NC} • VPN RUNNING  [${YELLOW}Menu${NC}]    $COLOR1│$NC"
+echo -e "${COLOR1}│  [08]${NC} • L2TP       [${YELLOW}Menu${NC}]   ${COLOR1}[16]${NC} • THEME        [${YELLOW}Menu${NC}]   $COLOR1│$NC"
 
 if [ "$Isadmin" = "ON" ]; then
 echo -e "${COLOR1}│                                                       $COLOR1│$NC"
@@ -295,7 +295,7 @@ case $opt in
 12 | 12) clear ; certv2ray ;;
 13 | 13) clear ; setmenu ;;
 14 | 14) clear ; menuinfo ;;
-15 | 15) clear ; update_beta2 ;;
+15 | 15) clear ; running ;;
 16 | 16) clear ; menutheme ;;
 100) clear ; $up2u ;;
 00 | 0) clear ; menu ;;
