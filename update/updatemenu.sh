@@ -38,10 +38,12 @@ rm -rf updatemenu
 rm -rf menutheme
 rm -rf setmenu
 rm -rf backup
+rm -rf menu-backup
 wget -O menu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/menu.sh" 
 wget -O updatemenu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/updatemenu.sh" 
 wget -O menutheme "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/menutheme.sh"
 wget -O backup "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/backup/backup.sh"
+wget -O menu-backup "https://raw.githubusercontent.com/hokagelegend2023/original/main/update/menu-backup.sh"
 wget -O install-sldns "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/SLDNS/install-sldns"
 wget -O restart "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/restart.sh"
 wget -O addssh "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/addssh.sh"
@@ -107,6 +109,7 @@ chmod +x running
 chmod +x updatemenu
 chmod +x setmenu
 chmod +x backup
+chmod +x menu-backup
 sl-download-info
 #install-sldns
 #install-ss-plugin
