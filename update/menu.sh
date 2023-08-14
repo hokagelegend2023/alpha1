@@ -296,7 +296,7 @@ case $opt in
 13 | 13) clear ; setmenu ;;
 14 | 14) clear ; menuinfo ;;
 15 | 15) clear ; update_beta2 ;;
-16 | 16) clear ; menu-theme ;;
+16 | 16) clear ; menutheme ;;
 100) clear ; $up2u ;;
 00 | 0) clear ; menu ;;
 *) clear ; menu ;;
