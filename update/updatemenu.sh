@@ -3,6 +3,8 @@
 # Color
 # hapus menu
 rm -rf menu
+rm -rf menu-theme
+rm -rf menuinfo
 rm -rf ipsaya
 rm -rf sl-fix
 rm -rf sshovpnmenu
@@ -32,13 +34,12 @@ rm -rf restart
 rm -rf slhost
 rm -rf install-sldns
 rm -rf addssh
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/menu.sh" && chmod +x /usr/bin/menu
-wget -q -O /usr/bin/menu-theme "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/menu-theme.sh" && chmod +x /usr/bin/menu-theme
-wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/hokagelegend2023/original/main/update/menu-backup.sh" && chmod +x /usr/bin/menu-backup
+wget -q -O menu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/menu.sh" 
+wget -q -O menu-theme "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/menu-theme.sh"
+wget -q -O menu-backup "https://raw.githubusercontent.com/hokagelegend2023/original/main/update/menu-backup.sh"
 wget -O install-sldns "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/SLDNS/install-sldns"
 wget -O restart "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/restart.sh"
 wget -O addssh "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/addssh.sh"
-
 wget -O ipsaya "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/ipsaya.sh"
 wget -O sl-fix "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/sslh-fix/sl-fix"
 wget -O sshovpnmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/sshovpn.sh"
@@ -62,7 +63,7 @@ wget -O updatemenu "https://raw.githubusercontent.com/hokagelegend2023/alpha/mai
 wget -O copyrepo "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/salin/copyrepo.sh"
 wget -O slhost "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/slhost.sh"
 wget -O sl-download-info "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/contohinfo/sl-download-info.sh"
-wget -q -O /usr/bin/menuinfo "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/menuinfo.sh"  && chmod +x /usr/bin/menuinfo
+wget -O menuinfo "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/menuinfo.sh"  
 wget -O install-ss-plugin "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/shadowsocks-plugin/install-ss-plugin.sh"
 
 chmod +x install-ss-plugin
@@ -78,6 +79,8 @@ chmod +x menuinfo
 chmod +x slhost
 chmod +x copyrepo
 chmod +x menu
+chmod +x menu-theme
+chmod +x menuinfo
 chmod +x ipsaya
 chmod +x sl-fix
 chmod +x sshovpnmenu
