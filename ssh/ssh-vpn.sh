@@ -175,9 +175,9 @@ echo "/usr/sbin/nologin" >> /etc/shells
 
 # install squid (proxy nya aku matikan)
 cd
-apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/squid3.conf"
-#sed -i $MYIP2 /etc/squid/squid.conf
+apt -y install squid
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/squid.conf"
+sed -i $MYIP2 /etc/squid/squid.conf
 
 # Install SSLH
 apt -y install sslh
