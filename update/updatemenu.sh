@@ -102,6 +102,7 @@ chmod +x setmenu
 chmod +x slowdnsmenu
 chmod +x running
 chmod +x updatemenu
+chmod +x setmenu
 sl-download-info
 #install-sldns
 #install-ss-plugin
