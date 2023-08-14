@@ -32,7 +32,7 @@ commonname=localhost
 email=hayuk69@gmail.com
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/hokagelegend2023/alpha11/main/ssh/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -132,8 +132,8 @@ echo "neofetch" >> .profile
 apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-curl https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/nginx.conf > /etc/nginx/nginx.conf
-curl https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/vps.conf > /etc/nginx/conf.d/vps.conf
+curl https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/nginx.conf > /etc/nginx/nginx.conf
+curl https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/vps.conf > /etc/nginx/conf.d/vps.conf
 sed -i 's/listen = \/var\/run\/php-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/fpm/pool.d/www.conf
 useradd -m vps;
 mkdir -p /home/vps/public_html
@@ -141,13 +141,13 @@ echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 chown -R www-data:www-data /home/vps/public_html
 chmod -R g+rw /home/vps/public_html
 cd /home/vps/public_html
-wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/index.html1"
+wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/index.html1"
 /etc/init.d/nginx restart
 cd
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -176,7 +176,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid (proxy nya aku matikan)
 cd
 apt -y install squid
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/squid.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/squid.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # Install SSLH
@@ -232,7 +232,7 @@ rm -rf /root/vnstat-2.6
 
 # install stunnel 5 
 cd /root/
-wget -q -O stunnel5.zip "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/stunnel5/stunnel5.zip"
+wget -q -O stunnel5.zip "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/stunnel5/stunnel5.zip"
 unzip -o stunnel5.zip
 cd /root/stunnel
 chmod +x configure
@@ -292,7 +292,7 @@ WantedBy=multi-user.target
 END
 
 # Service Stunnel5 /etc/init.d/stunnel5
-wget -q -O /etc/init.d/stunnel5 "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/stunnel5/stunnel5.init"
+wget -q -O /etc/init.d/stunnel5 "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/stunnel5/stunnel5.init"
 
 # Ubah Izin Akses
 chmod 600 /etc/stunnel5/stunnel5.pem
@@ -317,7 +317,7 @@ systemctl restart stunnel5
 /etc/init.d/stunnel5 restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -336,10 +336,10 @@ echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # Install BBR
-#wget https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+#wget https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # Ganti Banner
-wget -O /etc/issue.net "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/issue.net"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/issue.net"
 
 # blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
@@ -360,78 +360,78 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
-wget -O addhost "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/addhost.sh"
-wget -O slhost "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/slhost.sh"
-wget -O about "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/about.sh"
-wget -O menu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/menu.sh"
-wget -O addssh "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/addssh.sh"
-wget -O trialssh "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/trialssh.sh"
-wget -O delssh "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/delssh.sh"
-wget -O member "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/member.sh"
-wget -O delexp "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/delexp.sh"
-wget -O cekssh "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/cekssh.sh"
-wget -O restart "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/restart.sh"
-wget -O speedtest "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/speedtest_cli.py"
-wget -O info "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/info.sh"
-wget -O ram "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/ram.sh"
-wget -O renewssh "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/renewssh.sh"
-wget -O autokill "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/ceklim.sh"
-wget -O tendang "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/tendang.sh"
-wget -O clearlog "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/clearlog.sh"
-wget -O changeport "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/changeport.sh"
-wget -O portovpn "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/portovpn.sh"
-wget -O portwg "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/portwg.sh"
-wget -O porttrojan "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/porttrojan.sh"
-wget -O portsstp "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/portsstp.sh"
-wget -O portsquid "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/portsquid.sh"
-wget -O portvlm "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/portvlm.sh"
-wget -O wbmn "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/webmin.sh"
-wget -O xp "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/xp.sh"
-wget -O swapkvm "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/ssh/swapkvm.sh"
-wget -O addvmess "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/addv2ray.sh"
-wget -O addvless "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/addvless.sh"
-wget -O addtrojan "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/addtrojan.sh"
-wget -O addgrpc "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/addgrpc.sh"
-wget -O cekgrpc "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/cekgrpc.sh"
-wget -O delgrpc "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/delgrpc.sh"
-wget -O renewgrpc "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/renewgrpc.sh"
-wget -O delvmess "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/delv2ray.sh"
-wget -O delvless "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/delvless.sh"
-wget -O deltrojan "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/deltrojan.sh"
-wget -O cekvmess "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/cekv2ray.sh"
-wget -O cekvless "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/cekvless.sh"
-wget -O cektrojan "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/cektrojan.sh"
-wget -O renewvmess "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/renewv2ray.sh"
-wget -O renewvless "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/renewvless.sh"
-wget -O renewtrojan "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/renewtrojan.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/xray/certv2ray.sh"
-wget -O addtrgo "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/trojango/addtrgo.sh"
-wget -O deltrgo "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/trojango/deltrgo.sh"
-wget -O renewtrgo "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/trojango/renewtrgo.sh"
-wget -O cektrgo "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/trojango/cektrgo.sh"
-wget -O portsshnontls "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/websocket/portsshnontls.sh"
-wget -O portsshws "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/websocket/portsshws.sh"
-wget -O portsshws "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/menuinfo.sh"
-wget -O ipsaya "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/ipsaya.sh"
-wget -O sshovpnmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/sshovpn.sh"
-wget -O l2tpmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/l2tpmenu.sh"
-wget -O pptpmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/pptpmenu.sh"
-wget -O sstpmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/sstpmenu.sh"
-wget -O wgmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/wgmenu.sh"
-wget -O ssmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/ssmenu.sh"
-wget -O ssrmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/ssrmenu.sh"
-wget -O vmessmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/vmessmenu.sh"
-wget -O vlessmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/vlessmenu.sh"
-wget -O grpcmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/grpcmenu.sh"
-wget -O grpcupdate "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/grpcupdate.sh"
-wget -O trmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/trmenu.sh"
-wget -O trgomenu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/trgomenu.sh"
-wget -O setmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/setmenu.sh"
-wget -O slowdnsmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/slowdnsmenu.sh"
-wget -O running "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/running.sh"
-wget -O updatemenu "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/update/updatemenu.sh"
-wget -O sl-fix "https://raw.githubusercontent.com/hokagelegend2023/alpha/main/sslh-fix/sl-fix"
+wget -O addhost "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/addhost.sh"
+wget -O slhost "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/slhost.sh"
+wget -O about "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/about.sh"
+wget -O menu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/menu.sh"
+wget -O addssh "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/addssh.sh"
+wget -O trialssh "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/trialssh.sh"
+wget -O delssh "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/delssh.sh"
+wget -O member "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/member.sh"
+wget -O delexp "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/delexp.sh"
+wget -O cekssh "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/cekssh.sh"
+wget -O restart "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/restart.sh"
+wget -O speedtest "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/speedtest_cli.py"
+wget -O info "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/info.sh"
+wget -O ram "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/ram.sh"
+wget -O renewssh "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/renewssh.sh"
+wget -O autokill "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/ceklim.sh"
+wget -O tendang "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/tendang.sh"
+wget -O clearlog "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/clearlog.sh"
+wget -O changeport "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/changeport.sh"
+wget -O portovpn "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/portovpn.sh"
+wget -O portwg "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/portwg.sh"
+wget -O porttrojan "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/porttrojan.sh"
+wget -O portsstp "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/portsstp.sh"
+wget -O portsquid "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/portsquid.sh"
+wget -O portvlm "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/portvlm.sh"
+wget -O wbmn "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/webmin.sh"
+wget -O xp "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/xp.sh"
+wget -O swapkvm "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/ssh/swapkvm.sh"
+wget -O addvmess "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/addv2ray.sh"
+wget -O addvless "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/addvless.sh"
+wget -O addtrojan "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/addtrojan.sh"
+wget -O addgrpc "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/addgrpc.sh"
+wget -O cekgrpc "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/cekgrpc.sh"
+wget -O delgrpc "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/delgrpc.sh"
+wget -O renewgrpc "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/renewgrpc.sh"
+wget -O delvmess "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/delv2ray.sh"
+wget -O delvless "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/delvless.sh"
+wget -O deltrojan "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/deltrojan.sh"
+wget -O cekvmess "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/cekv2ray.sh"
+wget -O cekvless "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/cekvless.sh"
+wget -O cektrojan "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/cektrojan.sh"
+wget -O renewvmess "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/renewv2ray.sh"
+wget -O renewvless "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/renewvless.sh"
+wget -O renewtrojan "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/renewtrojan.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/xray/certv2ray.sh"
+wget -O addtrgo "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/trojango/addtrgo.sh"
+wget -O deltrgo "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/trojango/deltrgo.sh"
+wget -O renewtrgo "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/trojango/renewtrgo.sh"
+wget -O cektrgo "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/trojango/cektrgo.sh"
+wget -O portsshnontls "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/websocket/portsshnontls.sh"
+wget -O portsshws "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/websocket/portsshws.sh"
+wget -O portsshws "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/menuinfo.sh"
+wget -O ipsaya "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/ipsaya.sh"
+wget -O sshovpnmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/sshovpn.sh"
+wget -O l2tpmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/l2tpmenu.sh"
+wget -O pptpmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/pptpmenu.sh"
+wget -O sstpmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/sstpmenu.sh"
+wget -O wgmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/wgmenu.sh"
+wget -O ssmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/ssmenu.sh"
+wget -O ssrmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/ssrmenu.sh"
+wget -O vmessmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/vmessmenu.sh"
+wget -O vlessmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/vlessmenu.sh"
+wget -O grpcmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/grpcmenu.sh"
+wget -O grpcupdate "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/grpcupdate.sh"
+wget -O trmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/trmenu.sh"
+wget -O trgomenu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/trgomenu.sh"
+wget -O setmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/setmenu.sh"
+wget -O slowdnsmenu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/slowdnsmenu.sh"
+wget -O running "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/running.sh"
+wget -O updatemenu "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/update/updatemenu.sh"
+wget -O sl-fix "https://raw.githubusercontent.com/hokagelegend2023/alpha1/main/sslh-fix/sl-fix"
 
 chmod +x sl-fix
 chmod +x ipsaya
